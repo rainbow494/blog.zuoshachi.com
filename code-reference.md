@@ -1,34 +1,45 @@
-#Transfinder 模块扩展
-## Front End
+#模块参考手册
+## 前端
 
-### Single Page Application URL Router
-
-- 类库：[Sammy.js](http://www.sammyjs.org/)
-- 功能：
-	- 收到符合条件的参数，跳转到指定页面
-	- 收到不符合条件的参数，跳转到默认页面
-
-- 用例
-
-```
-var app = $.sammy(function()
-{
-	this.get("#/", function(context)
-	{
-		tf.pageManager.redirectToDefaultPage();
+### SPA URL Router
+- 实现工具：[Sammy.js](http://www.sammyjs.org/)
+- 快速入门：
+	- 初始化路由器
+	```
+	var app = $.sammy(function(){
+		// 路由配置。。。
 	});
+
+	// 运行路由
+	app.run('#/');
+	```
+
+	- 路由配置
+	- 匹配路由，执行指定代码
+	```
 	this.get("#/:page", function(context)
 	{
-		tf.pageManager.changePage(this.params.page);
+		// do somthing
 	});
-}).run("#/" + route);
-```
+	```
+
+	- 正则表达式验证当前路由
+	```
+	if (!(/#\/\d+/.test($.sammy().getLocation())))
+		// do somthing
+	```
+
+	- 修改当前路由, 发起新路由请求, 完成后继续执行当前函数
+	```
+	$.sammy().setLocation('#/');
+	```
 
 - 完整案例
-
+	- [下载地址](https://github.com/rainbow494/code-reference/tree/master/url-route/sammy)
+	- 运行方式： 通过IIS发布案例
 
 
 ----
-## Back End
+## 后端
 
 

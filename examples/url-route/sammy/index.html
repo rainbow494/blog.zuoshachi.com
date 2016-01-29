@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>sammy sample</title>
+	<script src="jquery.js" type="text/javascript"></script>
+	<script src="sammy.js" type="text/javascript"></script>
+</head>
+<body>
+<h1 class='pageTitle'></h1>
+<button onclick="btnClick()">Redirect To</button><input type="text" />
+
+<p>Page Id List</p>
+<ul>
+	<li>[0-9]+</li>
+	<li>[a-zA-Z_]+</li>
+	<li>'OtherPage'</li>
+	<li>''</li>
+</ul>
+</body>
+<script type="text/javascript">
+	function btnClick(){
+		$.sammy().setLocation('#/' + $('input').val());
+	}
+
+	var app = $.sammy(function()
+	{
+		this.get("#/", function(context)
+		{
+			$('.pageTitle').text('default Page');
+		});
+
+		this.get("#/OtherPage", function(context)
+		{
+			$('.pageTitle').text('Other Page');
+		});
+
+		// 路由存在，执行指定代码
+		this.get("#/:page", function(context)
+		{
+			// 正则表达式验证当前路由
+			if (!(/#\/\d+/.test($.sammy().getLocation())))
+			{
+				// 修改当前路由, 发起新路由请求, 完成后继续执行当前函数
+				$.sammy().setLocation('#/');
+			}
+			else
+			{
+				$('.pageTitle').text('Page id is ' + this.params.page);
+			}
+		});
+	});	
+
+	app.run('#/');
+</script>
+</html>
