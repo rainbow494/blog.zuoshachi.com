@@ -35,7 +35,7 @@
 	```
 
 - 完整案例
-	- [下载地址](https://github.com/rainbow494/code-reference/tree/master/url-route/sammy)
+	- [下载地址](https://github.com/rainbow494/code-reference/tree/master/examples/url-route/sammy)
 	- 运行方式： 通过IIS发布案例
 
 
