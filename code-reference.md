@@ -9,7 +9,8 @@
 	- 收到不符合条件的参数，跳转到默认页面
 
 - 用例
-``
+
+```
 var app = $.sammy(function()
 {
 	this.get("#/", function(context)
@@ -21,6 +22,7 @@ var app = $.sammy(function()
 		tf.pageManager.changePage(this.params.page);
 	});
 }).run("#/" + route);
+```
 
 - 完整案例
 
