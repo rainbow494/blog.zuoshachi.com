@@ -59,6 +59,8 @@
 		- 完整案例
 			1. 下载
 			2. 运行方式
+- 自适应
+	1. media-query (http://blog.dimpurr.com/css-media/)
 
 #### _(Draft)模块间通信  / Modal Communicate_
 - PubSub：[PubSubJS](https://github.com/mroderick/PubSubJS)
