@@ -1,10 +1,12 @@
-#模块参考手册
+# 模块参考手册
+
 ## 前端
 
-### SPA URL Router
-- 实现工具：[Sammy.js](http://www.sammyjs.org/)
-- 快速入门：
-	- 初始化路由器
+#### SPA URL Router
+- 实现工具 [Sammy.js](http://www.sammyjs.org/)
+
+- 快速入门
+	1. 初始化路由器
 	```
 	var app = $.sammy(function(){
 		// 路由配置。。。
@@ -14,8 +16,7 @@
 	app.run('#/');
 	```
 
-	- 路由配置
-	- 匹配路由，执行指定代码
+	1. 匹配路由，执行指定代码
 	```
 	this.get("#/:page", function(context)
 	{
@@ -23,13 +24,13 @@
 	});
 	```
 
-	- 正则表达式验证当前路由
+	1. 正则表达式验证当前路由
 	```
 	if (!(/#\/\d+/.test($.sammy().getLocation())))
 		// do somthing
 	```
 
-	- 修改当前路由, 发起新路由请求, 完成后继续执行当前函数
+	1. 修改当前路由, 发起新路由请求, 完成后继续执行当前函数
 	```
 	$.sammy().setLocation('#/');
 	```
@@ -38,17 +39,32 @@
 	- [下载地址](https://github.com/rainbow494/code-reference/tree/master/examples/url-route/sammy)
 	- 运行方式： 通过IIS发布案例
 
-### CSS框架
-- 主题：[Bootstrap](http://v3.bootcss.com/)
+#### CSS框架
+- 布局工具:
+	1. Bootstrap
+		- [教程](http://v3.bootcss.com/)
+	2. Flex
+		- [语法](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html)
+		- [实例](http://www.ruanyifeng.com/blog/2015/07/flex-examples.html)
 
-- 预编译：
+- _(Draft)预编译_:
+ 	1. LESS
+		- [教程](https://www.ibm.com/developerworks/cn/web/1207_zhaoch_lesscss/)
+		- 最佳实践
+			1. 调试方法
+				- 追加min-map的方法
+				- min-map是什么，min-map的实现，阮一峰
+			2. 组装
+			3. 控件的写法
+		- 完整案例
+			1. 下载
+			2. 运行方式
 
-- 
-
-### 模块间通信  / Modal Communicate
+#### _(Draft)模块间通信  / Modal Communicate_
 - PubSub：[PubSubJS](https://github.com/mroderick/PubSubJS)
 - 优势：模块完全分离，不知道对方的存在
 - 劣势：使用不规范容易造成内存泄漏
+
 ```
 // subscribe
 PubSub.subscribe(topicCombine(pb.DATA_CHANGE, "school"), this.dataChangeReceive);
@@ -59,6 +75,7 @@ PubSub.publish(topicCombine(pb.DATA_CHANGE, this.type, pb.EDIT), obEntityDataMod
 - Event:(this is basically a copy of slickgrid event)
 - 劣势：高耦合
 - 优势：消息不会暴露到全局范围
+
 ```
 Demo
 
@@ -79,13 +96,15 @@ com.subscrible(callbackFun);
 
 ```
 
-### 数据模型
+#### _(Draft)数据模型_
 
-### 面向对象
+
+#### _(Draft)面向对象_
+
 ```
 function BaseClass(arg){
 	this._privateField;
-	this.publicField;	
+	this.publicField;
 };
 
 // private method:added prefix '_'
@@ -95,7 +114,7 @@ BaseClass.prototype._privateMethod = function(){
 
 // public method
 BaseClass.prototype.method = function(){
-	// do something	
+	// do something
 }
 
 // inherit
@@ -117,7 +136,7 @@ SubClass.prototype.method = function(){
 var sample = new SubClass();
 sample.method()
 ```
-	
+
 
 
 
@@ -130,4 +149,3 @@ sample.method()
 ```
 public override IQueryable<TDomainEntity2> CreateQueryable<TDomainEntity2>(int databaseId)
 ```
-
