@@ -20,7 +20,7 @@
 	- sql server
 	- sql lite
 	- nodejs
-	
+
 - 第三方插件
 	- kendoui
 	- knockoutjs
@@ -30,7 +30,7 @@
 - chrome
 	- elementes
 		- css (2 filters)
-		- dom 
+		- dom
 		- event listner / dom break point
 		- responsive
 	- console
@@ -53,6 +53,9 @@
 	- postman ?? demo
 	- apiUtility64
 	- vs
+		- first throw exception
+		- 多线程调试
+	- windbug
 
 - sql server
 	- sql server profiler
@@ -60,13 +63,13 @@
 
 - sql lite
 	- [sqllite](http://www.oschina.net/news/43608/5-popular-and-free-sqlite-management-tools)
-	
+
 - nodejs
 	- executor grunt
 	- node-inspector
 
 - kendoui
-	- chrome-extension： kendo ui 
+	- chrome-extension： kendo ui
 - knockoutjs
 	- chrome-extension： knockoutjs context debugger
 
@@ -87,17 +90,17 @@
 		Con = new SQLiteConnection(@"URI=file:" + SpatialPath);
 		- geo region connection
 		```
-		
+
 	- gps 数据库mapping
 		```
 		acs.vehicle.name => gps.vehicle.id
 		acs.vehicle.gpsid => gps.vehicle.ExternalID
-		TFGPS.INI 
+		TFGPS.INI
 		```
-	
+
 	- orm mapping
 		> 2 PersistenceInfoProvider.cs files acs/extension
-	
+
 
 - 系统定位
 
@@ -114,16 +117,42 @@
 	- 数据库环境
 
 	- CI环境
-	
+
 	- 其它
 		- regex
 		- json
-		
-	- git	
+
+	- git
 		- 回退代码
-	
+
 ## 性能调试
 	- 工具 / 技巧
-	
-## 实例
+    - chrome
+	   - console.timer()
+	      - chrome performance
+	- .net 性能分析工具
+	- 数据库性能分析工具
 
+    - 已使用的性能优化技术
+        - 延迟加载
+            - kendogrid的virtual scroll
+        - 缓存
+            - LocalStorage
+            - e-tag（未使用）
+        - 传输
+            - gzip压缩(20:1)
+            - base64
+        - 数据库
+            - 临时表
+
+    - 技术带来的问题
+        - 延迟加载
+            - kendogrid的virtual scroll， 代码复杂度的增加
+        - 缓存问题
+            - LocalStorage
+            - 资源文件无法替换
+
+
+
+
+## 实例
