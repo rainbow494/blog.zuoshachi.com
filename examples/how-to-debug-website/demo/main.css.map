@@ -1,0 +1,1 @@
+{"version":3,"sources":["main.less"],"names":[],"mappings":"AAAA,IACI;EACI,eAAA","sourcesContent":["body {\r\n    p {\r\n        background:red\r\n    }\r\n}\r\n"],"file":"main.css","sourceRoot":"/source/"}

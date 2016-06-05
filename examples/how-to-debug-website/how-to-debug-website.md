@@ -4,9 +4,9 @@
 ## 小型网站架构图
  ![](https://github.com/rainbow494/code-reference/blob/master/img/architectural.png)
 
-## 模块、系统 / 运行环境 / 第三方插件？
+## 子系统 / 运行环境 / 插件
 
-- 模块、系统
+- 子系统
 	- 前台
 	- 后台
 	- 数据库
@@ -21,33 +21,52 @@
 	- sql lite
 	- nodejs
 
-- 第三方插件
+- 插件
 	- kendoui
 	- knockoutjs
 
 ## 调试工具 / 使用方法 / 文档？
 
 - chrome
-	- elementes
-		- css (2 filters)
-		- dom
-		- event listner / dom break point
-		- responsive
-	- console
-		- profiler
-		- log request
-	- source
-		- pause on exception (first exception?)
-		- black box
-		- format
-		- edit
-		- mapping project???????
-	- network
-		- bottle neck
-	- source-map
-		- [原理](http://www.ruanyifeng.com/blog/2013/01/javascript_source_map.html)
-	- resources
+    - css  / html
+        - less / source-map
+            - [原理](http://www.ruanyifeng.com/blog/2013/01/javascript_source_map.html)
+
+        - elementes
+            - css (2 filters)
+            - dom
+            - responsive
+            - event listner / dom break point
+
+    
+    - 持久化资源
+        - resources
+
+    - js 
+        - source
+            - pause on exception (first exception?)
+            - black box
+            - format
+            - edit
+            - mapping project???????
+
+    - third part
+        - kendoUI
+        - knockoutJS
+        
+            
+    - interface
+        - console
+            - log request
+        - network
+		    - bottle neck
+
 	- others
+        - profiler
+        - console
+            - time / timeEnd
+        - timeLine
+    
 
 - .net
 	- postman ?? demo
