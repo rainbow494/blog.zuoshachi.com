@@ -28,22 +28,33 @@
     find . -name 'nginx*',找找它的文件
     ```
 
-2. 默认 文件/文件夹 路径
+2. 文件/文件夹路径 (默认)
 
     - 配置文件
 
     ```
     /etc/nginx/nginx.conf
-    /etc/nginx/sites-available/
+    /etc/nginx/sites-available/default
     ```
-    **注意 Nginx可使用嵌套配置，Nginx.conf中有一段指明内部sever配置实用/sites-available/下的default文件？？？？？？？？？？？？？？？？？？？？？**
+    ```
+    ** 注意 Nginx可使用嵌套配置 ** 
+    
+    例如：linux的nginx.conf的默认配置下可见如下两行
 
-    - HTML文件 [相关资料](http://stackoverflow.com/questions/10674867/nginx-default-public-www-location)
+    > include /etc/nginx/conf.d/*.conf;
+    > include /etc/nginx/sites-enabled/*;
+
+    表明nginx.conf将会从这两个目标文件夹下读取 server节点的配置
+    ```    
+    
+    - Html文件 [(相关资料)](http://stackoverflow.com/questions/10674867/nginx-default-public-www-location)
+       
     ```
     /usr/share/nginx/html
     ```
-
+    
     - 日志文件
+
     ```
     /var/log/nginx
     ```
@@ -62,10 +73,29 @@
 
 ## Windows
 1. 常用命令
-```
-taskkill /F /IM nginx.exe
+    - 请在 *管理员* 模式下打开CMD窗口并执行相应命令
 
-cmd /k cd /d F:\bitbucket\nginx
+    - 停止Http服务（防止80端口被占用）
+    ```
+    net stop http
+    ```
 
-start nginx -c F:\bitbucket\JGIO\src\deploy\nginx\nginx.conf
-```
+    - 杀死所有nginx进程
+    ```
+    taskkill /F /IM nginx.exe
+    ```
+
+    - 快速打开ngixn.exe所在文件夹
+    ```
+    cmd /k cd /d F:\bitbucket\nginx
+    ```
+
+    - 读取指定文件配置启动nginx
+    ```    
+    start nginx -c F:\bitbucket\JGIO\src\deploy\nginx\nginx.conf
+    ```
+
+    - 查看帮助
+    ```    
+    nginx -h
+    ```
