@@ -1,7 +1,7 @@
 # 个人资料大杂烩
 
 # 文章
-- [Nginx快速入门](https://github.com/rainbow494/blog.zuoshachi.com/doc/nginx-quick-guide.md) - 2016-07-20
+- [Nginx学习笔记](https://github.com/rainbow494/blog.zuoshachi.com/blob/master/doc/nginx-quick-guide.md) - 2016-07-20
 
 ## 合作项目
 1. [高可扩展性架构博文翻译](https://github.com/aaronz/arch)(本人翻译部分)
