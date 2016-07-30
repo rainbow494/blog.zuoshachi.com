@@ -1,4 +1,4 @@
-# Ö»Òª8²½£¬¿ìËÙ¹¹½¨CI»·¾³
+# 8æ­¥æ•™ä½ æž„å»ºCIç³»ç»Ÿ
 
 ## build-dev
 
@@ -21,7 +21,7 @@
 other - monitor
 
 ----
-1. Æô¶¯pm2-webshellÊ§°Ü
+1. ï¿½ï¿½ï¿½ï¿½pm2-webshellÊ§ï¿½ï¿½
 - success
 > sudo pm2 install pm2-webshell
 - failed

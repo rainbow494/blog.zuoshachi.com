@@ -1,6 +1,7 @@
 # 个人资料大杂烩
 
-# 文章
+# 博客
+- [只要4步，利用笔记本免费在公网上做Demo](https://github.com/rainbow494/blog.zuoshachi.com/blob/master/doc/4-steps-to-demo-in-public-internet-free.md) - 2016-07-30
 - [Nginx学习笔记](https://github.com/rainbow494/blog.zuoshachi.com/blob/master/doc/nginx-quick-guide.md) - 2016-07-20
 
 ## 合作项目
