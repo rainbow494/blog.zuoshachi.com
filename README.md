@@ -1,8 +1,6 @@
 # 个人资料大杂烩
 
-# 博客
-- [只要4步，利用笔记本免费在公网上做Demo](https://github.com/rainbow494/blog.zuoshachi.com/blob/master/doc/4-steps-to-demo-in-public-internet-free.md) - 2016-07-30
-- [Nginx学习笔记](https://github.com/rainbow494/blog.zuoshachi.com/blob/master/doc/nginx-quick-guide.md) - 2016-07-20
+## [个人博客](http://blog.zuoshachi.com/)
 
 ## 合作项目
 1. [高可扩展性架构博文翻译](https://github.com/aaronz/arch)(本人翻译部分)
