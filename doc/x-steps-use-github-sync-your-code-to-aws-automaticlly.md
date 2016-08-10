@@ -23,6 +23,9 @@ Configuring Your Server
 ## 利用Nodejs + Expressjs + Git 自动同步代码
 https://www.npmjs.com/package/github
 
+## 其他
+注意为要被使用的文件夹和脚本给出足够的权限
+
 ## 参考资料
 https://developer.github.com/webhooks/creating/
 
