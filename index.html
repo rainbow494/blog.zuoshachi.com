@@ -23,7 +23,7 @@
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container-fluid">
             <div class="navbar-header">
-                <a class="navbar-brand" href="/fiona.html">梦旅行 - 爱养花白日梦想家的自说自话</a>
+                <a class="navbar-brand" href="/fiona.html"><!--ko text: obTitle--><!--/ko--> - <!--ko text: obDescription--><!--/ko--></a>
             </div>
         </div>
     </nav>
@@ -61,51 +61,45 @@
 
     <script>
         var myViewModel = {
-            obSummary: ko.observableArray([])
+            obSummary: ko.observableArray([]),
+            obTitle: ko.observable(),
+            obDescription: ko.observable()
         };
         ko.applyBindings(myViewModel);
 
         var init = function() {
+            initBase();
             initSummary();
         }
 
+        function initBase() {
+            myViewModel.obTitle(title);
+            myViewModel.obDescription(description);
+        }
         function initSummary() {
             articles = articles.map(function(article){
                 article.arch = "#" + article.title;
                 return article;
             })
-            myViewModel.obSummary(articles);
-            
+            myViewModel.obSummary(articles);            
         }
 
+        var title = "大尾巴狼的自留地";
+        var description = "越简单的设计，越有机会实现复杂的功能";
         var articles = [        
             {
-                title: "布鲁塞尔——2无处不在的街头艺术",
-                date: "2016年7月25日22:38",
-                summary: "在欧洲旅行，如果说美轮美奂的古典建筑，让人体会到浓浓的艺术氛围，那各种形式的街头表演，就让人更身临其境的体会",
-                imgUrl: "/img/4-belgien.jpg",
-                url: "http://mp.weixin.qq.com/s?__biz=MzI5NzE3NTM4MQ==&mid=2649628252&idx=1&sn=051367c28a76e9b1519d24134d914b73&scene=4"
+                title: "只要4步，利用笔记本免费在公网上做Demo",
+                date: "2016-7-30",
+                summary: "最近在研究如何利用github的webhook将代码同步到本地，在过程当中有一步需要填写回调的ip地址。 看了github的官方教程Configuring Your Server 其中特别推荐使用Ngrok，玩了一下，发现这货能快速把你的本机环境暴露到公网上，于是就在这里分享给大家",
+                imgUrl: "",
+                url: "https://github.com/rainbow494/blog.zuoshachi.com/blob/master/doc/4-steps-to-demo-in-public-internet-free.md"
             },
             {
-                title: "布鲁塞尔——1追贼记",
-                date: "2016年7月23日17:42",                
-                summary: "德国沙发主的帮助下，我们在网上拼车去往比利时首都布鲁塞尔。结果是和胖胖的黑人大妈拼车，司机又赶时间就把我们丢",
-                imgUrl: "/img/3-belgien.jpg",
-                url: "http://mp.weixin.qq.com/s?__biz=MzI5NzE3NTM4MQ==&mid=2649628236&idx=1&sn=590e296342caf855edd2c4058993db92&scene=4"
-            },
-            {
-                title: "德国科隆——因一座教堂而闻名",
-                date: "2016年7月18日00:41",
-                summary: "2013/7/15科隆Köln，因科隆大教堂而闻名于世，距离法兰克福大概3小时车程。从法兰克福过去车票才9欧",
-                imgUrl: "/img/2-coron.jpg",
-                url: "http://mp.weixin.qq.com/s?__biz=MzI5NzE3NTM4MQ==&mid=2649628210&idx=1&sn=225581572330166c29d45cac5b96b5db&scene=4"
-            },
-            {
-                title: "逃跑计划——85天欧洲之旅",
-                date: "2016年7月12日22:57",
-                summary: "2013年夏天，我们踏上了蓄谋已久的欧洲之旅，那时候正流行间隔年，或许是过于任性，不安于现状，想要见识一下外面的世界，我们也来了一场说走就走的旅行。",
-                imgUrl: "/img/1-frankfut.jpg",
-                url: "http://mp.weixin.qq.com/s?__biz=MzI5NzE3NTM4MQ==&mid=2649628168&idx=1&sn=912e2e733c8df6ade88ccc78d8224599&scene=4"
+                title: "Nginx学习笔记",
+                date: "2016-7-20",                
+                summary: "1.常用命令 2.文件路径 3.配置方法 4.其它",
+                imgUrl: "",
+                url: "https://github.com/rainbow494/blog.zuoshachi.com/blob/master/doc/nginx-quick-guide.md"
             }
         ]
         init();
