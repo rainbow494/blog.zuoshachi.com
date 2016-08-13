@@ -1,4 +1,4 @@
-# 只要4步，利用笔记本免费在公网上做Demo - Ngrok学习笔记
+# 只需4步，利用笔记本免费在公网上做Demo - Ngrok学习笔记
 
 > 最近在研究如何利用github的webhook将代码同步到本地，在过程当中有一步需要填写回调的ip地址。
 > 看了github的官方教程[Configuring Your Server](https://developer.github.com/webhooks/configuring/)

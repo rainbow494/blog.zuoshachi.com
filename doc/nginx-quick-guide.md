@@ -46,18 +46,14 @@
 
     表明nginx.conf将会从这两个目标文件夹下读取 server节点的配置
     
-    ```
     - Html文件 [(相关资料)](http://stackoverflow.com/questions/10674867/nginx-default-public-www-location)       
     ```
-    
-    
-
+    /usr/share/nginx/
     ```
     
     - 日志文件
-
     ```
-    /var/log/nginx
+    /var/log/nginx/
     ```
 
 3. 配置方法
