@@ -9,11 +9,10 @@
     <link href="http://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
     <style>
         .article {
-            margin-bottom: 50px;   
+            margin-bottom: 40px;   
         }
         .article-summary {
             max-width: 640px;
-            margin-top: 20px;
         }
         a:hover{
             text-decoration: none;
@@ -21,19 +20,25 @@
         .info {
             color: gray;
         }
+        .header {
+            height: 120px;
+            margin-bottom: 50px;
+            padding-bottom: 50px;
+            
+            color: white;
+            display:flex;
+            flex-direction: column;
+            align-items: center;
+        }
     </style>
 </head>
 
 <body>
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="http://blog.zuoshachi.com"><!--ko text: obTitle--><!--/ko--> - <!--ko text: obDescription--><!--/ko--></a>
-            </div>
-        </div>
+    <nav class="header navbar navbar-inverse navbar-fixed-top">
+        <h1><!--ko text: obTitle--><!--/ko--></h1><h4><!--ko text: obDescription--><!--/ko--></h4>
     </nav>
 
-    <div style="height:100px">
+    <div class="header">
     </div>
 
     <div class="container-fluid">
@@ -47,7 +52,7 @@
             </div>
             <div class="col-sm-9" data-bind="foreach: obSummary">
                <div class="article">
-                    <a data-bind="attr: { href: url }"><h2 data-bind="text: title, attr: { id: title }"></h1></a>
+                    <a data-bind="attr: { href: url }"><h3 data-bind="text: title, attr: { id: title }"></h3></a>
                     <img data-bind="attr: { src: imgUrl }" class="img-rounded" />
                     <p data-bind="text: summary" class="article-summary"></p>
                     <p><small class="info">发布于：<!--ko text: date--><!--/ko--></small></p>
@@ -84,11 +89,16 @@
                 article.arch = "#" + article.title;
                 return article;
             })
-            myViewModel.obSummary(articles);            
+            myViewModel.obSummary(articles);
+            
+            $('.article-summary').map(function(idx, articleSummary){
+                var $articleSummary = $(articleSummary);
+                $articleSummary.html($articleSummary.html().replace(/\n/g,"<br>"));
+            });
         }
 
         var title = "大尾巴狼的自留地";
-        var description = "越简单的设计，越有机会实现复杂的功能";
+        var description = "简单设计，复杂功能";
         var articles = [
             {
                 title: "只需5步，自动同步github代码到aws服务器",
@@ -98,7 +108,7 @@
                 url: "https://github.com/rainbow494/blog.zuoshachi.com/blob/master/doc/5-steps-to-sync-code-from-github-to-aws-automaticlly.md"
             },
             {
-                title: "只要4步，利用笔记本免费在公网上做Demo",
+                title: "只需4步，利用笔记本免费在公网上做Demo",
                 date: "2016/7/30",
                 summary: "最近在研究如何利用github的webhook将代码同步到本地，在过程当中有一步需要填写回调的ip地址。看了github的官方教程Configuring Your Server 其中特别推荐使用Ngrok，玩了一下，发现这货能快速把你的本机环境暴露到公网上，于是就在这里分享给大家",
                 imgUrl: "",
@@ -107,7 +117,7 @@
             {
                 title: "Nginx学习笔记",
                 date: "2016/7/20",                
-                summary: "1.常用命令 2.文件路径 3.配置方法 4.其它",
+                summary: "1.常用命令 \n\r 2.文件路径 \n\r 3.配置方法 \n\r 4.其它",
                 imgUrl: "",
                 url: "https://github.com/rainbow494/blog.zuoshachi.com/blob/master/doc/nginx-quick-guide.md"
             }
