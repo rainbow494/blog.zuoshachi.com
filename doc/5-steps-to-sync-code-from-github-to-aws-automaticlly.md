@@ -1,41 +1,99 @@
-# 只需5步，自动同步github代码到amazon服务器
+# 只需5步，自动同步github代码到aws服务器
 
-最近实现了个小功能，自动同步github代码到amazon服务器
-工作流如下
-    1.推送数据到github
-    2.webhook发送消息到指定webapi(url)地址
-    3.webapi发送请求，从github上下载代码
+最近研究了一把如何将github代码自动同步到aws上。起因是老婆将近两年的游记陆续发到了微信订阅号上，但订阅号不能绑定域名，因此需要一个静态主页(fiona.link) 展示订阅号上链接。
 
-起因是，家里老板把两年前辞职旅行的经历陆续发表到了微信订阅号(mdreamj)上，但订阅号没有域名绑定功能，所以只好写个静态主页host在aws上(fiona.link)，同时顺带把内容到了[github](https://github.com/rainbow494/fiona.link) 上
+最终，游记发布流程如下
 
-整个实现过程可以分为下面5步
+1.本地更新游记，推送到github上
+2.github的webhook服务发送post请求到指定url地址（aws主机地址）
+3.express服务处理请求，调用git脚本，从github上下载游记
 
-## 1. 在github上建立webhook
-Creating a webhook is a two-step process. 
-You'll first need to set up how you want your webhook to behave through GitHub--what events should it listen to. 
-After that, you'll set up your server to receive and manage the payload.
+## 整个实现过程可以分为以下5步
+1. 配置webhook服务
+2. 利用express建立监听服务
+3. 在本地测试webhook
+4. 利用express执行脚本，下载github代码
+5. 在amazon服务执行服务
 
+另外，本文假定读者了解nodejs，expressjs，node-debug，github，curl，git，pm2，linux命令
 
-To set up a repository webhook on GitHub, head over to the Settings page of your repository, and click on Webhooks & services. After that, click on Add webhook.
+## 1. 配置webhook服务
+- 进入github网站，打开  代码库(repository) > setting选项卡 > webhook & services选项卡
+- 在webhook & services选项卡下，点击Add webhook按钮
+- 按下文[利用Ngrok在公网下暴露你的本机环境](https://github.com/rainbow494/blog.zuoshachi.com/blob/master/doc/4-steps-to-demo-in-public-internet-free.md)将免费域名指向自己的主机
+- 在payload下填入响应接受请求的webhook域名(即上一步中的ngrok域名，http://xxxx.ngrok.io)
 
-Payload URL
-http://localhost:4567
-
-Configuring Your Server
-
-接受来自github的post消息
+> 阅更多内容请参考[webhook guide](https://developer.github.com/webhooks/)
 
 ## 2. 利用express建立监听服务
 
-## 3. 在本地测试webhook
-- [利用Ngrok在公网下暴露你的本机环境](https://github.com/rainbow494/blog.zuoshachi.com/blob/master/doc/4-steps-to-demo-in-public-internet-free.md)
+- 利用下面代码启动expressjs服务
+```
+var express = require('express')
+var app = express()
+ 
+app.get('/', function (req, res) {
+  res.send('hello world')
+});
+
+app.post('/', function (req, res) {
+  res.send('get webhook request')
+});
+
+app.listen(3000)
+```
+
+- 在浏览器中输入```http://localhost:3000```确认服务已经启动
+
+## 3. 在本地测试webhook服务
+- 修改github上的代码
+- 打开webhook & services选项卡，查看Recent Deliveries面板（如果没看到Recent Deliveries面板，请点击Edit按钮）
+- 在Recent Deliveries面板下点击最近一条webhook request后面的省略号，确认请求是否成功
+- 查看express服务，确认控制台上是否显示```get webhook request```
 
 ## 4. 利用express执行脚本，下载github代码
+- 编写git脚本并测试
+- sync-blog.bat （windows）
+```
+git -C f:\github\fiona.link pull
+```
+- sync-blog.sh（linux）
+```
+git -C /home/ubuntu/fiona/fiona.link pull
+```
+
+- 利用expressjs执行git脚本
+```
+var exec = require('child_process').exec;
+
+app.post('/', function (req, res) {
+    res.send('get webhook request')
+
+    var child = null;
+    child = exec('./sync-fiona-blog.bat');
+    // child = exec('./sync-fiona-blog.sh');  // 服务部署在linux上后请调用该脚本
+    
+    child.stdout.on('data', function(data) {
+        console.log('stdout: ' + data);
+    });
+    
+    child.stderr.on('data', function(data) {
+        console.log('stdout: ' + data);
+    });
+
+    child.on('close', function(code) {
+        console.log('closing code: ' + code);
+    });
+});
+```
+
+- 重启expressjs服务，在github网站上修改代码，测试expressjs是否响应求并利用git脚本将代码下载到本地
 
 ## 5. 在amazon服务执行服务
+- 修改github webhook下的payload地址
+- 复制git脚本到aws，并赋予执行权限（例如把脚本的权限设置为777）
 - 利用pm2 host expressjs服务
-- 注意为要被使用的文件夹和脚本给出足够的权限
-
+- 修改github代码，确认代码是否被pull到aws上
 
 ## 实现代码
 - [github-sync-helper实现](https://github.com/rainbow494/github-sync-helper)
