@@ -1,4 +1,4 @@
-## [学习笔记]
+## 学习笔记
 
 - [只需5步，自动同步github代码到aws服务器](https://github.com/rainbow494/blog.zuoshachi.com/blob/master/doc/5-steps-to-sync-code-from-github-to-aws-automaticlly.md)
 - [只需4步，利用笔记本免费在公网上做Demo](https://github.com/rainbow494/blog.zuoshachi.com/blob/master/doc/4-steps-to-demo-in-public-internet-free.md)
