@@ -8,9 +8,6 @@
     <title>大尾巴狼的自留地</title>
     <link href="http://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        .article {
-            margin-bottom: 40px;   
-        }
         .article-summary {
             max-width: 640px;
         }
@@ -30,6 +27,13 @@
             flex-direction: column;
             align-items: center;
         }
+        .article,
+        .content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
     </style>
 </head>
 
@@ -41,26 +45,15 @@
     <div class="header">
     </div>
 
-    <div class="container-fluid">
-        <div class="row">
-            <div class="hidden-xs col-sm-3 sidebar">
-                <ul data-bind="foreach: obSummary" class="hidden-xs col-sm-3 nav nav-sidebar" style="position:fixed">
-                    <li>
-                        <a data-bind="text: title, attr: { href: arch }"></a>
-                    </li>
-                </ul>
-            </div>
-            <div class="col-sm-9" data-bind="foreach: obSummary">
-               <div class="article">
-                    <a data-bind="attr: { href: url }"><h3 data-bind="text: title, attr: { id: title }"></h3></a>
-                    <img data-bind="attr: { src: imgUrl }" class="img-rounded" />
-                    <p data-bind="text: summary" class="article-summary"></p>
-                    <p><small class="info">发布于：<!--ko text: date--><!--/ko--></small></p>
-                </div>
-            </div>
+    <div class="content" data-bind="foreach: obSummary">
+       <div class="article">
+            <a data-bind="attr: { href: url }"><h3 data-bind="text: title, attr: { id: title }"></h3></a>
+            <img data-bind="attr: { src: imgUrl }" class="img-rounded" />
+            <p data-bind="text: summary" class="article-summary"></p>
+            <!-- ko if:false -->
+                <p><small class="info">发布于：<!--ko text: date--><!--/ko--></small></p>
+            <!--/ko-->
         </div>
-    </div>
-    <div style="height:100px">
     </div>
 
     <script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
@@ -101,25 +94,25 @@
         var description = "简单设计，复杂功能";
         var articles = [
             {
-                title: "只需5步，自动同步github代码到aws服务器",
-                date: "2016/8/13",
-                summary: "最近研究了一把如何将github代码自动同步到aws上。起因是老婆将近两年的游记陆续发到了微信订阅号上，但订阅号不能绑定域名，因此需要一个静态主页(fiona.link) 展示订阅号上链接。",
+                title: "学习笔记",
+                date: "",
+                summary: "个人学习笔记",
                 imgUrl: "",
-                url: "https://github.com/rainbow494/blog.zuoshachi.com/blob/master/doc/5-steps-to-sync-code-from-github-to-aws-automaticlly.md"
+                url: "https://github.com/rainbow494/blog.zuoshachi.com/blob/master/README.md"
             },
             {
-                title: "只需4步，利用笔记本免费在公网上做Demo",
-                date: "2016/7/30",
-                summary: "最近在研究如何利用github的webhook将代码同步到本地，在过程当中有一步需要填写回调的ip地址。看了github的官方教程Configuring Your Server 其中特别推荐使用Ngrok，玩了一下，发现这货能快速把你的本机环境暴露到公网上，于是就在这里分享给大家",
+                title: "架构.IO",
+                date: "",
+                summary: "架构文章搜索引擎 - 合作项目",
                 imgUrl: "",
-                url: "https://github.com/rainbow494/blog.zuoshachi.com/blob/master/doc/4-steps-to-demo-in-public-internet-free.md"
+                url: "http://jiagou.io"
             },
             {
-                title: "Nginx学习笔记",
-                date: "2016/7/20",                
-                summary: "1.常用命令 \n\r 2.文件路径 \n\r 3.配置方法 \n\r 4.其它",
+                title: "高可扩展性架构博文翻译",
+                date: "",
+                summary: "合作项目",
                 imgUrl: "",
-                url: "https://github.com/rainbow494/blog.zuoshachi.com/blob/master/doc/nginx-quick-guide.md"
+                url: "https://github.com/aaronz/arch"
             }
         ]
         init();
