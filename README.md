@@ -5,6 +5,8 @@
 - [Nginx学习笔记](https://github.com/rainbow494/blog.zuoshachi.com/blob/master/doc/nginx-quick-guide.md)
 - [如何同步github上其他分支的代码到当前分支](https://github.com/rainbow494/blog.zuoshachi.com/blob/master/doc/how-to-create-pull-request-and-sync-a-fork.md)
 - [正则表达式学习资料汇总](https://github.com/rainbow494/blog.zuoshachi.com/blob/master/doc/regex-study.md)
+- [javascript常用数据结构](https://github.com/rainbow494/blog.zuoshachi.com/blob/master/doc/javascript-common-data-structure.md)
+- [企业应用架构模式阅读笔记](https://github.com/rainbow494/blog.zuoshachi.com/blob/master/doc/reading-notes-patterns-of-enterprise-application-architecture.md)
 
 ----
 
