@@ -7,6 +7,7 @@
 - [正则表达式学习资料汇总](https://github.com/rainbow494/blog.zuoshachi.com/blob/master/doc/regex-study.md)
 - [十分钟了解Javascript常用数据结构](https://github.com/rainbow494/blog.zuoshachi.com/blob/master/doc/10-minutes-to-known-javascript-common-data-structure.md)
 - [企业应用架构模式阅读笔记](https://github.com/rainbow494/blog.zuoshachi.com/blob/master/doc/reading-notes-patterns-of-enterprise-application-architecture.md)
+- [15分钟搞定真机调试环境](https://github.com/rainbow494/blog.zuoshachi.com/blob/master/doc/15-minutes-to-build-environment-for-remote-debug-css-and-js-on-mobile-device.md)
 
 ----
 

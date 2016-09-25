@@ -1,0 +1,14 @@
+{
+  "name": "nodejs-server",
+  "version": "1.0.0",
+  "description": "nodejs-server for build lab enveriornment",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "paul.huang",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}
