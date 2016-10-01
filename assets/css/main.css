@@ -1,0 +1,117 @@
+body,
+header,
+article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+nav {
+    width: 100vw;
+    display: flex;
+    height: 37px;
+    padding: 20px 20px 0 20px;
+    box-sizing: border-box;
+    justify-content: flex-end;
+}
+
+nav a {
+    top: 8px;
+    right: 6px;
+    padding: 8px 12px;
+    color: #5badf0;
+    font-size: 13px;
+    line-height: 1.35;
+    border-radius: 3px;
+}
+
+.profile h1 {
+    font-weight: 600;
+    letter-spacing: -2px;
+    font-size: 3em;
+    color: #222;
+}
+
+.profile h2 {
+    font-size: 20px;
+    font-weight: 300;
+    color: #aaa;
+}
+
+h3 {
+    font-size: 20px;
+    font-weight: 400;
+}
+
+#wrapper {
+    max-width: 600px;
+    padding: 0 40px;
+}
+
+.profile #wrapper {
+    padding-top: 90px;
+    margin: 0 auto;
+}
+
+.profile #header {
+    border-bottom: 1px solid #eee;
+    margin-bottom: 40px;
+    padding-bottom: 40px;
+    text-align: center;
+    position: relative;
+}
+
+.profile #avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.list-item {
+    display: flex;
+}
+
+.list-header {
+    display: flex;
+    align-items: baseline;
+}
+
+.list-detail h3 {
+    margin-top: 0;
+}
+
+.list-detail {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 14px;
+    padding-bottom: 39px;
+}
+
+.list-detail p {
+    width: calc(100% - 88px);
+}
+
+.list-header ._bubble {
+    width: 72px;
+    height: 72px;
+    border-radius: 35px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-top: 14px;
+    margin-right: 16px;
+}
+
+#footer {
+    box-shadow: inset 0 1px 0 #eee;
+    padding: 40px 0 0;
+    margin-top: 100px;
+}
+
+p.small {
+    color: #bbb;
+    font-size: 14px;
+    line-height: 1.5;
+}

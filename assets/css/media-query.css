@@ -1,0 +1,33 @@
+@media only screen and (max-width: 792px) {
+    .list-header ._bubble {
+        margin-top: 0;
+        margin-right: 16px;
+        width: 56px;
+        height: 56px;
+    }
+    .list-view {
+        padding: 32px 0 64px;
+    }
+    .list-detail {
+        margin-top: 0;
+    }
+    .list-detail p {
+        width: 100%;
+    }
+    .profile #header {
+        margin-bottom: 0;
+        padding-bottom: 0;
+        border-bottom: 0;
+    }
+    #footer,
+    #post-meta {
+        margin-top: 60px;
+    }
+    .modal-dialog {
+        width: 300px;
+    }
+    .wx-qr-code {
+        width: 250px;
+        height: 250px;
+    }
+}

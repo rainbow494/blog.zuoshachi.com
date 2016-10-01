@@ -1,0 +1,13 @@
+.modal-dialog {
+    width: 450px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal.in {
+    display: flex !important;
+    align-items: initial;
+    justify-content: center;
+}

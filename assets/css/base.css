@@ -1,0 +1,36 @@
+@font-face {
+    font-family: 'cwTeXHei';
+    font-style: normal;
+    font-weight: 500;
+    src: url(//fonts.gstatic.com/ea/cwtexhei/v3/cwTeXHei-zhonly.eot);
+    src: url(//fonts.gstatic.com/ea/cwtexhei/v3/cwTeXHei-zhonly.eot?#iefix) format('embedded-opentype'), url(//fonts.gstatic.com/ea/cwtexhei/v3/cwTeXHei-zhonly.woff2) format('woff2'), url(//fonts.gstatic.com/ea/cwtexhei/v3/cwTeXHei-zhonly.woff) format('woff'), url(//fonts.gstatic.com/ea/cwtexhei/v3/cwTeXHei-zhonly.ttf) format('truetype');
+}
+
+html {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+body {
+    font-family: 'cwTeXHei', "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+a,
+a:active,
+a:focus,
+a:hover {
+    text-decoration: none;
+    cursor: pointer;
+    color: #5694f1;
+}
+
+h1,
+h2 {
+    margin: 0;
+}
