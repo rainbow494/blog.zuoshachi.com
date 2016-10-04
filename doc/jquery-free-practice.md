@@ -192,10 +192,3 @@ get('http://huangyue.link', function(result) {
 });
 ```
 
-
-## 动画
-
-[运行代码]()
-
-## 替代方案
-
