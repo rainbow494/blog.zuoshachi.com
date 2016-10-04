@@ -7,7 +7,7 @@
 [运行代码](https://jsfiddle.net/rainbow494/rac5jthw/1/)
 
 ```
-/* 　var $ = document.querySelectorAll.bind(document); */
+/* var $ = document.querySelectorAll.bind(document); */
 var $ = document.querySelectorAll.bind(document);
 $('#first')[0].style['background-color'] = 'red';
 ```
@@ -16,6 +16,8 @@ $('#first')[0].style['background-color'] = 'red';
 ## DOM操作
 
 [运行代码](https://jsfiddle.net/rainbow494/7fynn3pq/2/)
+
+<script async src="//jsfiddle.net/rainbow494/rac5jthw/1/embed/js,html,css,result/dark/"></script>
 
 ```
 var $ = document.querySelector.bind(document);

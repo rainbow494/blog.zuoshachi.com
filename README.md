@@ -8,6 +8,8 @@
 - [企业应用架构模式阅读笔记](https://github.com/rainbow494/blog.zuoshachi.com/blob/master/doc/reading-notes-patterns-of-enterprise-application-architecture.md)
 - [15分钟搞定真机调试环境](https://github.com/rainbow494/blog.zuoshachi.com/blob/master/doc/15-minutes-to-build-environment-for-remote-debug-css-and-js-on-mobile-device.md)
 - [面试题集锦](https://github.com/rainbow494/blog.zuoshachi.com/blob/master/doc/interview-questions.md)
+- [如何做到jquery-free-实践](https://github.com/rainbow494/blog.zuoshachi.com/blob/master/doc/jquery-free-practice.md)
+
 
 ----
 
