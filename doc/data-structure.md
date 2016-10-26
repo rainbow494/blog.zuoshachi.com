@@ -56,6 +56,7 @@
 
 ## lambada表达式
 - 数据结构操作
+- [lambada表达式](https://www.mgenware.com/blog/?p=286)
 
 ## ADO.Net
 
